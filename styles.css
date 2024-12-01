@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #0b8142;  /* أخضر العلم الجزائري */
+    --secondary-color: #ffffff;
+    --accent-color: #ff4b4b;
+    --text-color: #333;
+    --background-light: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color);
+}
+
+.smooth {
+    scroll-behavior: smooth;
+}
+
+/* الهيدر */
+header {
+    background: linear-gradient(135deg, var(--primary-color), #085e30);
+    color: var(--secondary-color);
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* القسم الرئيسي */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/jpeg;base64,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');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--secondary-color);
+    border-radius: 0;
+    margin-bottom: 2rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.feature-card {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* أزرار */
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background-color: #096e38;
+}
+
+/* تأثيرات التحريك */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+}
+
+/* تنسيق الفيديو */
+.video-section {
+    padding: 2rem;
+    background: var(--background-light);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* نسبة 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* صفحة عن المنصة */
+.about-hero {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: right;
+}
+
+/* نموذج الاتصال */
+.contact-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* تنسيقات إضافية */
+.logo {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.active {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-section {
+        padding: 1rem;
+    }
+}
